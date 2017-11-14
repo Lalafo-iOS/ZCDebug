@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CAC7DDD1F8508C100C415E3 /* ZCDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CAC7DDB1F8508C100C415E3 /* ZCDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CAC7DE91F851CA000C415E3 /* ZCDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC7DE71F851CA000C415E3 /* ZCDebug.swift */; };
+		1CAC7DEA1F851CA000C415E3 /* ZCDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CAC7DE81F851CA000C415E3 /* ZCDebug.h */; };
+		ACE60FC1665E31EBC93BF6CD /* Pods_ZCDebug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF50A305B7929224E6437C1E /* Pods_ZCDebug.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1CAC7DD81F8508C100C415E3 /* ZCDebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZCDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CAC7DDB1F8508C100C415E3 /* ZCDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCDebug.h; sourceTree = "<group>"; };
 		1CAC7DDC1F8508C100C415E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CAC7DE71F851CA000C415E3 /* ZCDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZCDebug.swift; sourceTree = "<group>"; };
+		1CAC7DE81F851CA000C415E3 /* ZCDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCDebug.h; sourceTree = "<group>"; };
+		92768F1408A1FA4AB881AA46 /* Pods-ZCDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZCDebug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZCDebug/Pods-ZCDebug.debug.xcconfig"; sourceTree = "<group>"; };
+		B15ADFF9B91F71B37B4284B1 /* Pods-ZCDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZCDebug.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZCDebug/Pods-ZCDebug.release.xcconfig"; sourceTree = "<group>"; };
+		FF50A305B7929224E6437C1E /* Pods_ZCDebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZCDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE60FC1665E31EBC93BF6CD /* Pods_ZCDebug.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +39,8 @@
 			children = (
 				1CAC7DDA1F8508C100C415E3 /* ZCDebug */,
 				1CAC7DD91F8508C100C415E3 /* Products */,
+				7C159EF70EC80B2A0AA58F4B /* Pods */,
+				785D2AB8828B2CB62B2D89B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,10 +55,36 @@
 		1CAC7DDA1F8508C100C415E3 /* ZCDebug */ = {
 			isa = PBXGroup;
 			children = (
-				1CAC7DDB1F8508C100C415E3 /* ZCDebug.h */,
+				1CAC7DE61F851CA000C415E3 /* Classes */,
 				1CAC7DDC1F8508C100C415E3 /* Info.plist */,
 			);
 			path = ZCDebug;
+			sourceTree = "<group>";
+		};
+		1CAC7DE61F851CA000C415E3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC7DE71F851CA000C415E3 /* ZCDebug.swift */,
+				1CAC7DE81F851CA000C415E3 /* ZCDebug.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		785D2AB8828B2CB62B2D89B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF50A305B7929224E6437C1E /* Pods_ZCDebug.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C159EF70EC80B2A0AA58F4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92768F1408A1FA4AB881AA46 /* Pods-ZCDebug.debug.xcconfig */,
+				B15ADFF9B91F71B37B4284B1 /* Pods-ZCDebug.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +94,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CAC7DDD1F8508C100C415E3 /* ZCDebug.h in Headers */,
+				1CAC7DEA1F851CA000C415E3 /* ZCDebug.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,10 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CAC7DE01F8508C100C415E3 /* Build configuration list for PBXNativeTarget "ZCDebug" */;
 			buildPhases = (
+				9111B19995277F8ACD53DEC3 /* [CP] Check Pods Manifest.lock */,
 				1CAC7DD31F8508C100C415E3 /* Sources */,
 				1CAC7DD41F8508C100C415E3 /* Frameworks */,
 				1CAC7DD51F8508C100C415E3 /* Headers */,
 				1CAC7DD61F8508C100C415E3 /* Resources */,
+				093DFFE455DB62B84EC649D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -95,6 +132,7 @@
 				TargetAttributes = {
 					1CAC7DD71F8508C100C415E3 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -126,11 +164,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		093DFFE455DB62B84EC649D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZCDebug/Pods-ZCDebug-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9111B19995277F8ACD53DEC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZCDebug-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1CAC7DD31F8508C100C415E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CAC7DE91F851CA000C415E3 /* ZCDebug.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +267,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -244,6 +320,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -252,7 +329,9 @@
 		};
 		1CAC7DE11F8508C100C415E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92768F1408A1FA4AB881AA46 /* Pods-ZCDebug.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -265,6 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihsuropu.ZCDebug;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -272,7 +352,9 @@
 		};
 		1CAC7DE21F8508C100C415E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15ADFF9B91F71B37B4284B1 /* Pods-ZCDebug.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
