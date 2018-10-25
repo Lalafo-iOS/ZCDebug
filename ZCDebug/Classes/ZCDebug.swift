@@ -11,48 +11,48 @@ private let kErrorColor = "❌"
 private let kWarningColor = "❗"
 private let kDebugColor = "💬" //👻▶◼➡⏩
 
-#if DEBUG
-	public func _$l<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-		swift_print(kDebugColor, textObject: debug, file: file, function: function, line: line)
-	}
-	
-	public func _$le<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-		swift_print(kErrorColor, textObject: debug, file: file, function: function, line: line)
-	}
-	
-	public func _$lw<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-		swift_print(kWarningColor, textObject: debug, file: file, function: function, line: line)
-	}
-	
-	@discardableResult public func _$tf(file: String = #file, _ function: String = #function, _ line: Int = #line) -> ZCDebugObject? {
-		let obj = ZCDebugObject(file: file, function: function, line: line)
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: { _ = obj.startTime }) // Prevent object from immediate dealocation
-		return obj
-	}
-	
-	public func _$fail(_ condition: Bool = true, reason: String, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-		guard condition else {
-			return
-		}
-		let stackSymbols = Thread.callStackSymbols.reduce("", { (result, value) -> String in
-			return result + "\n" + value
-		})
-		let message = "❗❗❗ fail: " + reason + "❗❗❗\n"
-		_$le(message, file, function, line)
-		print(stackSymbols)
-		abort()
-	}
-#else
-	public func _$l<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {}
-	
-	public func _$le<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {}
-	
-	public func _$lw<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {}
-	
-	public func _$tf(file: String = #file, _ function: String = #function, _ line: Int = #line) -> ZCDebugObject? { return nil }
-	
-	public func _$fail(_ condition: Bool = true, reason: String, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {}
-#endif
+public func _$l<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+    #if DEBUG
+    swift_print(kDebugColor, textObject: debug, file: file, function: function, line: line)
+    #endif
+}
+
+public func _$le<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+    #if DEBUG
+    swift_print(kErrorColor, textObject: debug, file: file, function: function, line: line)
+    #endif
+}
+
+public func _$lw<T>(_ debug: T, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+    #if DEBUG
+    swift_print(kWarningColor, textObject: debug, file: file, function: function, line: line)
+    #endif
+}
+
+@discardableResult public func _$tf(file: String = #file, _ function: String = #function, _ line: Int = #line) -> ZCDebugObject? {
+    #if DEBUG
+    let obj = ZCDebugObject(file: file, function: function, line: line)
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: { _ = obj.startTime }) // Prevent object from immediate dealocation
+    return obj
+    #else
+    return nil
+    #endif
+}
+
+public func _$fail(_ condition: Bool = true, reason: String, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+    #if DEBUG
+    guard condition else {
+        return
+    }
+    let stackSymbols = Thread.callStackSymbols.reduce("", { (result, value) -> String in
+        return result + "\n" + value
+    })
+    let message = "❗❗❗ fail: " + reason + "❗❗❗\n"
+    _$le(message, file, function, line)
+    print(stackSymbols)
+    abort()
+    #endif
+}
 
 private func swift_print<T>(_ prefix: String, textObject: T, file: String, function: String, line: Int) {
 	var text = ""
