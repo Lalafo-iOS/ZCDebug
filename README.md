@@ -1,8 +1,10 @@
 # ZCDebug
 ### Swift lightweight debug library.
 Сonvenient library for debug purposes. Main focus is minimize developer time for debug. It's easy to use and understand.
+Version 0.0.2 - uses Apple native Logger.
 
 ### Functions for debug:
+* **_$c()** - log without message, it shows caller info.
 * **_$l(obj)** - regular log, it should be used for all inconsiderable logs (response from API)
 * **_$lw(obj)** - warning log, it should be used for situation when data is incorrect but app handle it and can work further
 * **_$le(obj)** - error los, something is going wrong and should be fixed.

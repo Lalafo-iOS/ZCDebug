@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZCDebug"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Swift lightweight debug library."
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 Сonvenient library for debug purposes. Main focus is minimize developer time for debug.
                    DESC
 
-  s.homepage     = "https://github.com/ihsuropu/ZCDebug.git"
+  s.homepage     = "https://github.com/Lalafo-iOS/ZCDebug"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
