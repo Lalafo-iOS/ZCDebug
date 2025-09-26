@@ -113,7 +113,7 @@ private func timenow() -> String {
     let fraction = Int(modf(milliseconds, &integer) * 1000)
     
     let format = "%H:%M:%S."
-    strftime_l(&buffer, buffer.count, format, localtime(&atime), nil)
+    strftime(&buffer, buffer.count, format, localtime(&atime))
     return String(cString: buffer) + String(format: "%03d", fraction)
 }
 
